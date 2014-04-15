@@ -9,7 +9,7 @@
     (eval-print-last-sexp)))
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-recipes")
-(setq packages-list '(cider clojure-mode distel emacs-w3m haml-mode mingus paredit rhtml-mode sass-mode slim-mode))
+(setq packages-list '(cider clojure-mode distel emacs-w3m haml-mode magit mingus paredit python-mode rhtml-mode sass-mode slim-mode))
 (el-get 'sync packages-list)
 
 ;; title
@@ -142,3 +142,9 @@
             (local-set-key "\M-." 'erl-find-source-under-point)
             (local-set-key "\M-," 'erl-find-source-unwind)
             (local-set-key "\M-*" 'erl-find-source-unwind)))
+
+(setq auto-mode-alist (append
+                       '(("rebar.config$" . erlang-mode)
+                         ("\\.app.src$" . erlang-mode)
+                         ("\\.app$" . erlang-mode))
+                       auto-mode-alist))
