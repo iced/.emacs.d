@@ -111,14 +111,6 @@
           (lambda ()
             (local-set-key "\^M" 'newline-and-indent)))
 
-;; rhtml
-(eval-after-load "rhtml-mode"
-  '(progn
-     (put 'erb-face 'face-defface-spec '((t nil)))
-     (face-spec-set 'erb-face '((t nil)))
-     (put 'erb-out-delim-face 'face-defface-spec '((t (:inherit erb-delim-face))))
-     (face-spec-set 'erb-out-delim-face '((t (:inherit erb-delim-face))))))
-
 ;; clojure
 (add-hook 'clojure-mode-hook (lambda ()
                                (paredit-mode)
