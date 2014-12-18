@@ -1,17 +1,3 @@
-;; el-get
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
-
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-recipes")
-(setq packages-list '(cider clojure-mode distel magit paredit))
-(el-get 'sync packages-list)
-
 ;; title
 (setq frame-title-format '("" invocation-name " - " "%b"))
 
@@ -26,17 +12,6 @@
 ;; no yes/no prompts
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; no process kill confirmations
-(setq kill-buffer-query-functions
-      (remq 'process-kill-buffer-query-function
-            kill-buffer-query-functions))
-
-;; wind move
-(windmove-default-keybindings)
-
-;; remove trailing whitespaces on save
-(add-hook 'before-save-hook 'whitespace-cleanup)
-
 ;; theme
 (setq custom-enabled-themes '(misterioso))
 (load-theme 'misterioso)
@@ -48,6 +23,31 @@
 (custom-set-faces
  '(fixed-pitch ((t nil)))
  '(variable-pitch ((t nil))))
+
+;; el-get
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-recipes")
+(setq packages-list '(cider clojure-mode distel magit paredit))
+(el-get 'sync packages-list)
+
+;; no process kill confirmations
+(setq kill-buffer-query-functions
+      (remq 'process-kill-buffer-query-function
+            kill-buffer-query-functions))
+
+;; wind move
+(windmove-default-keybindings)
+
+;; remove trailing whitespaces on save
+(add-hook 'before-save-hook 'whitespace-cleanup)
 
 ;; enable global font lock
 (global-font-lock-mode t)
