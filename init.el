@@ -9,7 +9,7 @@
     (eval-print-last-sexp)))
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-recipes")
-(setq packages-list '(cider clojure-mode distel emacs-w3m haml-mode magit mingus paredit python-mode rhtml-mode sass-mode slim-mode))
+(setq packages-list '(cider clojure-mode distel magit paredit))
 (el-get 'sync packages-list)
 
 ;; title
