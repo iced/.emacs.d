@@ -35,7 +35,7 @@
     (eval-print-last-sexp)))
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-recipes")
-(setq packages-list '(cider clojure-mode distel magit paredit))
+(setq packages-list '(cider clojure-mode magit paredit))
 (el-get 'sync packages-list)
 
 ;; no process kill confirmations
@@ -118,25 +118,3 @@
 
 (add-hook 'cider-repl-mode-hook (lambda () (paredit-mode)))
 (setq cider-repl-use-clojure-font-lock t)
-
-;; erlang
-(distel-setup)
-(setq erl-reload-dwim t)
-
-(add-hook 'erlang-mode-hook
-          (lambda ()
-            (setq inferior-erlang-machine-options '("-sname" "emacs"))))
-
-(add-hook 'erlang-shell-mode-hook
-          (lambda ()
-            (local-set-key "\C-\M-i" 'erl-complete)
-            (local-set-key "\M-?" 'erl-complete)
-            (local-set-key "\M-." 'erl-find-source-under-point)
-            (local-set-key "\M-," 'erl-find-source-unwind)
-            (local-set-key "\M-*" 'erl-find-source-unwind)))
-
-(setq auto-mode-alist (append
-                       '(("rebar.config$" . erlang-mode)
-                         ("\\.app.src$" . erlang-mode)
-                         ("\\.app$" . erlang-mode))
-                       auto-mode-alist))
