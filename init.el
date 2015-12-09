@@ -6,6 +6,7 @@
 
 (require 'ue-look)
 (require 'ue-basic)
+(require 'ue-magit)
 (require 'ue-company)
 (require 'ue-paredit)
 (require 'ue-emacs-lisp)
