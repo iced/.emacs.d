@@ -1,3 +1,5 @@
+(require 'ue-lisps)
+
 (add-hook 'emacs-lisp-mode-hook #'eldoc-mode)
 
 (if (boundp 'ue-paredit-enabled)

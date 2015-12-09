@@ -1,3 +1,4 @@
+(require 'ue-lisps)
 (require 'ue-package)
 
 (ue-package-ensure-installed '(cider))

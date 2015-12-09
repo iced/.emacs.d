@@ -1,3 +1,12 @@
+(require 'ue-package)
+
+;; tweaking mode names
+(ue-package-ensure-installed '(delight))
+(require 'delight)
+
+;; default mode
+(setq initial-major-mode 'fundamental-mode)
+
 ;; cursor switching between windows
 (windmove-default-keybindings)
 
