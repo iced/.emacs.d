@@ -13,12 +13,10 @@
 
 (if (boundp 'ue-company-enabled)
     (progn
-      (add-hook 'cider-mode-hook #'company-mode)
       (define-key cider-mode-map (kbd "M-TAB") #'company-complete)
-      (add-hook 'cider-repl-mode-hook
-                (lambda ()
-                  (company-mode)
-                  (local-set-key (kbd "M-TAB") #'company-complete)))))
+      (add-hook 'cider-mode-hook #'company-mode)
+      (define-key cider-repl-mode-map (kbd "M-TAB") #'company-complete)
+      (add-hook 'cider-repl-mode-hook #'company-mode)))
 
 (defvar ue-clojure-enabled t)
 (provide 'ue-clojure)
