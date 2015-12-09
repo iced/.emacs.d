@@ -1,4 +1,3 @@
-(message load-file-name)
 (defvar ue-dir (file-name-directory load-file-name))
 (defvar ue-etc-dir (expand-file-name "etc" ue-dir))
 (defvar ue-var-dir (expand-file-name "var" ue-dir))
