@@ -26,6 +26,25 @@
 ;; show matching parens
 (show-paren-mode t)
 
+;; more useful modeline
+(line-number-mode t)
+(column-number-mode t)
+(setq-default mode-line-format
+              '("%e"
+                mode-line-front-space
+                mode-line-mule-info
+                mode-line-client
+                mode-line-modified
+                mode-line-remote
+                mode-line-frame-identification
+                mode-line-buffer-identification
+                "   "
+                mode-line-position
+                "   "
+                mode-line-modes
+                mode-line-misc-info
+                mode-line-end-spaces))
+
 ;; nice theme
 (setq custom-enabled-themes '(misterioso))
 (load-theme 'misterioso)
