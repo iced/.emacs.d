@@ -4,5 +4,7 @@
 
 (require 'magit)
 
+(global-set-key (kbd "C-x g") #'magit-status)
+
 (defvar ue-magit-enabled t)
 (provide 'ue-magit)
