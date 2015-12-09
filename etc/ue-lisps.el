@@ -1,5 +1,3 @@
-(delight 'eldoc-mode nil "eldoc")
-
 (if (boundp 'ue-paredit-enabled)
     (delight 'paredit-mode nil "paredit"))
 

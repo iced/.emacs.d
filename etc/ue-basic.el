@@ -4,6 +4,9 @@
 (ue-package-ensure-installed '(delight))
 (require 'delight)
 
+;; hide eldoc mode in mode line
+(delight 'eldoc-mode nil "eldoc")
+
 ;; default mode
 (setq initial-major-mode 'fundamental-mode)
 
