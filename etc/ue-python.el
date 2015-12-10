@@ -1,6 +1,7 @@
-(ue-ensure-installed '(anaconda-mode virtualenvwrapper))
+(ue-ensure-installed '(anaconda-mode virtualenvwrapper pydoc))
 (require 'anaconda-mode)
 (require 'virtualenvwrapper)
+(require 'pydoc)
 
 (if (boundp 'ue-basic-enabled)
     (delight 'anaconda-mode nil "anaconda-mode"))
@@ -11,6 +12,13 @@
 (add-hook 'python-mode-hook #'eldoc-mode)
 
 (venv-initialize-interactive-shells)
+(venv-initialize-eshell)
+
+(defun pydoc-at-point ()
+  (interactive)
+  (pydoc (thing-at-point 'symbol)))
+
+(define-key python-mode-map (kbd "C-c C-d") #'pydoc-at-point)
 
 
 (if (boundp 'ue-company-enabled)
