@@ -2,7 +2,8 @@
 (require 'anaconda-mode)
 (require 'virtualenvwrapper)
 
-(delight 'anaconda-mode nil "anaconda-mode")
+(if (boundp 'ue-basic-enabled)
+    (delight 'anaconda-mode nil "anaconda-mode"))
 
 (setq anaconda-mode-installation-directory (expand-file-name "anaconda-mode" ue-var-dir))
 
