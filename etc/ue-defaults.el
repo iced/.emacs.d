@@ -1,32 +1,45 @@
-;; frame title
 (setq frame-title-format '("" invocation-name " - " "%b"))
 
-;; no startup messages and scratch text
-(setq inhibit-startup-message t)
-(setq initial-scratch-message "")
-
-;; disable menu, toolbar, scrollbars and tooltips
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (tooltip-mode 0)
 
-;; visual selection
+(setq inhibit-startup-message t)
+(setq initial-scratch-message "")
+
+(setq initial-major-mode 'fundamental-mode)
+
+(windmove-default-keybindings)
+
+(setq bookmark-default-file (expand-file-name "bookmarks" ue-var-dir))
+
+(setq dired-listing-switches "-Bhl --group-directories-first")
+(setq directory-free-space-args "-Pmh")
+(put 'dired-find-alternate-file 'disabled nil)
+
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(add-hook 'before-save-hook #'whitespace-cleanup)
+
+(setq backup-inhibited t)
+
+(setq auto-save-default nil)
+(setq auto-save-list-file-prefix (expand-file-name "auto-save-" ue-var-dir))
+
+(setq-default indent-tabs-mode nil)
+
+(auto-compression-mode t)
+
 (transient-mark-mode t)
 
-;; non blinking cursor
 (blink-cursor-mode 0)
-
-;; cursor only in active window
 (setq-default cursor-in-non-selected-windows nil)
 
-;; truncate lines
 (setq default-truncate-lines t)
 
-;; show matching parens
 (show-paren-mode t)
 
-;; more useful modeline
 (line-number-mode t)
 (column-number-mode t)
 (setq-default mode-line-format
@@ -45,14 +58,5 @@
                 mode-line-misc-info
                 mode-line-end-spaces))
 
-;; nice theme
-(setq custom-enabled-themes '(misterioso))
-(load-theme 'misterioso)
-
-;; color tweaks for company popup
-(if (boundp 'ue-company-enabled)
-    (custom-set-faces
-     '(company-tooltip ((t (:background "steel"))))))
-
-(defvar ue-look-enabled t)
-(provide 'ue-look)
+(defvar ue-defaults-enabled t)
+(provide 'ue-defaults)

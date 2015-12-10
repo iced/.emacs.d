@@ -1,56 +1,21 @@
-(require 'ue-package)
-
-;; default mode
-(setq initial-major-mode 'fundamental-mode)
-
-;; cursor switching between windows
-(windmove-default-keybindings)
-
-;; ido
-(ido-mode t)
-(setq ido-save-directory-list-file (expand-file-name "ido" ue-var-dir))
-
-;; bookmarks file location
-(setq bookmark-default-file (expand-file-name "bookmarks" ue-var-dir))
-
-;; dired without hidden files and with `a` enabled
-(setq dired-listing-switches "-Bhl --group-directories-first")
-(setq directory-free-space-args "-Pmh")
-(put 'dired-find-alternate-file 'disabled nil)
-
-;; always use y/n prompts
-(fset 'yes-or-no-p 'y-or-n-p)
-
-;; remove trailing whitespaces on save
-(add-hook 'before-save-hook #'whitespace-cleanup)
-
-;; disable backups
-(setq backup-inhibited t)
-
-;; disable auto saves
-(setq auto-save-default nil)
-(setq auto-save-list-file-prefix (expand-file-name "auto-save-" ue-var-dir))
-
-;; don't use tabs
-(setq-default indent-tabs-mode nil)
-
-;; open compressed files
-(auto-compression-mode t)
-
-;; tweaking mode names
-(ue-package-ensure-installed '(delight))
+(ue-ensure-installed '(delight))
 (require 'delight)
 
-;; hide eldoc mode in mode line
 (delight 'eldoc-mode nil "eldoc")
 
-;; proper json mode support
-(ue-package-ensure-installed '(json-mode))
+
+(ue-ensure-installed '(json-mode))
 (require 'json-mode)
 
-;; proper csv mode support
-(ue-package-ensure-installed '(csv-mode))
+
+(ue-ensure-installed '(csv-mode))
 (require 'csv-mode)
+
+
+(ue-ensure-installed '(magit))
+(require 'magit)
+
+(global-set-key (kbd "C-x g") #'magit-status)
 
 (defvar ue-basic-enabled t)
 (provide 'ue-basic)

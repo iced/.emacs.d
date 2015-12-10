@@ -1,7 +1,4 @@
-(require 'ue-package)
-
-(ue-package-ensure-installed '(projectile))
-
+(ue-ensure-installed '(projectile))
 (require 'projectile)
 
 (setq projectile-known-projects-file (expand-file-name "projectile-bookmarks" ue-var-dir))
