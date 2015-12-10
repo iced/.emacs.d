@@ -6,6 +6,7 @@
 (require 'ue-emacs-lisp)
 (require 'ue-clojure)
 (require 'ue-python)
+(require 'ue-go)
 (require 'ue-theme-misterioso)
 
 (setq venv-location "~/dev/venvs")
