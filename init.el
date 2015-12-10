@@ -12,3 +12,4 @@
 (require 'ue-emacs-lisp)
 (require 'ue-clojure)
 (require 'ue-look)
+(require 'init-local nil t)
