@@ -8,6 +8,7 @@
 (require 'ue-basic)
 (require 'ue-magit)
 (require 'ue-company)
+(require 'ue-projectile)
 (require 'ue-paredit)
 (require 'ue-emacs-lisp)
 (require 'ue-clojure)
