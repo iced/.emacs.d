@@ -49,5 +49,10 @@
 (setq custom-enabled-themes '(misterioso))
 (load-theme 'misterioso)
 
+;; color tweaks for company popup
+(if (boundp 'ue-company-enabled)
+    (custom-set-faces
+     '(company-tooltip ((t (:background "steel"))))))
+
 (defvar ue-look-enabled t)
 (provide 'ue-look)
