@@ -10,8 +10,12 @@
 (ido-mode t)
 (setq ido-save-directory-list-file (expand-file-name "ido" ue-var-dir))
 
+;; bookmarks file location
+(setq bookmark-default-file (expand-file-name "bookmarks" ue-var-dir))
+
 ;; dired without hidden files and with `a` enabled
 (setq dired-listing-switches "-Bhl --group-directories-first")
+(setq directory-free-space-args "-Pmh")
 (put 'dired-find-alternate-file 'disabled nil)
 
 ;; always use y/n prompts
