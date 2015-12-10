@@ -1,12 +1,5 @@
 (require 'ue-package)
 
-;; tweaking mode names
-(ue-package-ensure-installed '(delight))
-(require 'delight)
-
-;; hide eldoc mode in mode line
-(delight 'eldoc-mode nil "eldoc")
-
 ;; default mode
 (setq initial-major-mode 'fundamental-mode)
 
@@ -35,6 +28,21 @@
 
 ;; open compressed files
 (auto-compression-mode t)
+
+;; tweaking mode names
+(ue-package-ensure-installed '(delight))
+(require 'delight)
+
+;; hide eldoc mode in mode line
+(delight 'eldoc-mode nil "eldoc")
+
+;; proper json mode support
+(ue-package-ensure-installed '(json-mode))
+(require 'json-mode)
+
+;; proper csv mode support
+(ue-package-ensure-installed '(csv-mode))
+(require 'csv-mode)
 
 (defvar ue-basic-enabled t)
 (provide 'ue-basic)
