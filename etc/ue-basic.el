@@ -10,6 +10,10 @@
 (ido-mode t)
 (setq ido-save-directory-list-file (expand-file-name "ido" ue-var-dir))
 
+;; dired without hidden files and with `a` enabled
+(setq dired-listing-switches "-Bhl --group-directories-first")
+(put 'dired-find-alternate-file 'disabled nil)
+
 ;; always use y/n prompts
 (fset 'yes-or-no-p 'y-or-n-p)
 
