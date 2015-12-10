@@ -11,5 +11,6 @@
 (require 'ue-paredit)
 (require 'ue-emacs-lisp)
 (require 'ue-clojure)
+(require 'ue-python)
 (require 'ue-look)
-(require 'init-local nil t)
+(require 'ue-init-local nil t)
