@@ -9,8 +9,6 @@
 (require 'ue-go)
 (require 'ue-theme-misterioso)
 
-(setq venv-location "~/dev/venvs")
-
 (add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
 
 (provide 'ue-profile-machine-dev)
