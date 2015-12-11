@@ -12,6 +12,10 @@
 (require 'csv-mode)
 
 
+(ue-ensure-installed '(yaml-mode))
+(require 'yaml-mode)
+
+
 (ue-ensure-installed '(magit))
 (require 'magit)
 
