@@ -20,13 +20,17 @@
 
 (define-key python-mode-map (kbd "C-c C-d") #'pydoc-at-point)
 
+(setq python-shell-interpreter "ipython")
+
 
 (if (boundp 'ue-company-enabled)
     (progn
       (ue-ensure-installed '(company-anaconda))
       (add-to-list 'company-backends 'company-anaconda)
       (add-hook 'anaconda-mode-hook #'company-mode)
-      (define-key anaconda-mode-map (kbd "M-TAB") #'company-complete)))
+      (define-key anaconda-mode-map (kbd "M-TAB") #'company-complete)
+      (add-hook 'inferior-python-mode-hook #'company-mode)
+      (define-key inferior-python-mode-map (kbd "M-TAB") #'company-complete)))
 
 (defvar ue-python-enabled t)
 (provide 'ue-python)
