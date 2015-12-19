@@ -1,4 +1,5 @@
 (ue-ensure-installed '(go-mode go-eldoc))
+
 (require 'go-mode)
 (require 'go-eldoc)
 

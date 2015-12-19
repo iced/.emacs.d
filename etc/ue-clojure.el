@@ -1,4 +1,5 @@
 (ue-ensure-installed '(cider))
+
 (require 'cider)
 
 (add-hook 'cider-mode-hook #'eldoc-mode)

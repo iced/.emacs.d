@@ -1,12 +1,12 @@
 (ue-ensure-installed '(anaconda-mode virtualenvwrapper pydoc))
+
+(setq anaconda-mode-installation-directory (expand-file-name "anaconda-mode" ue-var-dir))
+
+(setq python-shell-interpreter "ipython")
+
 (require 'anaconda-mode)
 (require 'virtualenvwrapper)
 (require 'pydoc)
-
-(if (boundp 'ue-basic-enabled)
-    (delight 'anaconda-mode nil "anaconda-mode"))
-
-(setq anaconda-mode-installation-directory (expand-file-name "anaconda-mode" ue-var-dir))
 
 (add-hook 'python-mode-hook #'anaconda-mode)
 (add-hook 'python-mode-hook #'eldoc-mode)
@@ -20,7 +20,9 @@
 
 (define-key python-mode-map (kbd "C-c C-d") #'pydoc-at-point)
 
-(setq python-shell-interpreter "ipython")
+
+(if (boundp 'ue-basic-enabled)
+    (delight 'anaconda-mode nil "anaconda-mode"))
 
 
 (if (boundp 'ue-company-enabled)

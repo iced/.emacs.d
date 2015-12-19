@@ -1,4 +1,5 @@
 (ue-ensure-installed '(paredit))
+
 (require 'paredit)
 
 (if (boundp 'ue-basic-enabled)
