@@ -7,8 +7,7 @@
 (require 'ue-clojure)
 (require 'ue-python)
 (require 'ue-go)
+(require 'ue-ess)
 (require 'ue-theme-misterioso)
-
-(add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
 
 (provide 'ue-profile-machine-dev)
