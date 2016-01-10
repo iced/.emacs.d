@@ -1,4 +1,6 @@
-;; requires github.com/rogpeppe/godef
+;; requires github.com/nsf/gocode
+;;          github.com/rogpeppe/godef
+;;          golang.org/x/tools/cmd/goimports
 
 (ue-ensure-installed '(go-mode go-eldoc))
 
