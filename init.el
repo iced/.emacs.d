@@ -26,4 +26,6 @@
 
 (require 'ue-defaults)
 
-(require (intern (concat "ue-profile-machine-" (system-name))) nil t)
+(defvar ue-profile (car (split-string (system-name) "\\\.")))
+
+(require (intern (concat "ue-profile-machine-" ue-profile)) nil t)
