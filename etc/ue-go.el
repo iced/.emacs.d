@@ -1,3 +1,5 @@
+;; requires github.com/rogpeppe/godef
+
 (ue-ensure-installed '(go-mode go-eldoc))
 
 (require 'go-mode)
@@ -9,6 +11,8 @@
 
 (define-key go-mode-map (kbd "C-c C-d") #'godoc-at-point)
 (define-key go-mode-map (kbd "M-.") #'godef-jump)
+
+(setq gofmt-command "goimports")
 
 
 (if (boundp 'ue-company-enabled)
