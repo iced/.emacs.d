@@ -24,6 +24,11 @@
       (package-install package))))
 
 
+(defun ue-add-to-path (path)
+  (setenv "PATH" (concat path ":" (getenv "PATH")))
+  (add-to-list 'exec-path path))
+
+
 (require 'ue-defaults)
 
 (defvar ue-profile (car (split-string (system-name) "\\\.")))

@@ -1,4 +1,4 @@
-(setq frame-title-format '("" invocation-name " - " "%b"))
+(setq frame-title-format '("" "emacs" " - " "%b"))
 
 (menu-bar-mode 0)
 (tool-bar-mode 0)
