@@ -10,5 +10,7 @@
 (ue-ensure-installed '(magit))
 (global-set-key (kbd "C-x g") #'magit-status)
 
+(ue-ensure-installed '(ag))
+
 (defvar ue-basic-enabled t)
 (provide 'ue-basic)
