@@ -4,6 +4,7 @@
 (require 'ue-projectile)
 (require 'ue-paredit)
 (require 'ue-emacs-lisp)
+(require 'ue-cl)
 (require 'ue-clojure)
 (require 'ue-python)
 (require 'ue-go)
