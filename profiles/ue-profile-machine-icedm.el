@@ -14,9 +14,9 @@
 (set-face-attribute 'default nil :height 140)
 
 (ue-add-to-path "/usr/local/bin")
-(ue-add-to-path "~/.bin")
+(ue-add-to-path "/Users/iced/.bin")
 
-(setenv "GOPATH" "~/dev/go")
-(ue-add-to-path "~/dev/go/bin")
+(setenv "GOPATH" "/Users/iced/dev/go")
+(ue-add-to-path "/Users/iced/dev/go/bin")
 
 (provide 'ue-profile-machine-icedm)
