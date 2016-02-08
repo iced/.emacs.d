@@ -1,4 +1,5 @@
 (require 'ue-basic)
+(require 'ue-osx)
 (require 'ue-ido)
 (require 'ue-company)
 (require 'ue-projectile)
@@ -9,15 +10,15 @@
 (require 'ue-python)
 (require 'ue-go)
 (require 'ue-ess)
+(require 'ue-scala)
 (require 'ue-theme-misterioso)
-(require 'ue-osx)
 
 (set-face-attribute 'default nil :height 140)
 
 (ue-add-to-path "/usr/local/bin")
-(ue-add-to-path "/Users/iced/.bin")
+(ue-add-to-path (expand-file-name "~/.bin"))
 
-(setenv "GOPATH" "/Users/iced/dev/go")
-(ue-add-to-path "/Users/iced/dev/go/bin")
+(setenv "GOPATH" (expand-file-name "~/dev/go"))
+(ue-add-to-path (expand-file-name "~/dev/go/bin"))
 
 (provide 'ue-profile-machine-icedm)
