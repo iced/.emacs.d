@@ -24,11 +24,6 @@
       (package-install package))))
 
 
-(defun ue-add-to-path (path)
-  (setenv "PATH" (concat path ":" (getenv "PATH")))
-  (add-to-list 'exec-path path))
-
-
 (if (eq system-type 'darwin)
     (progn
       (ue-ensure-installed '(exec-path-from-shell))
