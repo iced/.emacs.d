@@ -29,6 +29,12 @@
   (add-to-list 'exec-path path))
 
 
+(if (eq system-type 'darwin)
+    (progn
+      (ue-ensure-installed '(exec-path-from-shell))
+      (exec-path-from-shell-initialize)))
+
+
 (require 'ue-defaults)
 
 (defvar ue-profile (car (split-string (system-name) "\\\.")))

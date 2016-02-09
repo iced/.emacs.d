@@ -1,6 +1,11 @@
 ;; requires github.com/nsf/gocode
 ;;          github.com/rogpeppe/godef
 ;;          golang.org/x/tools/cmd/goimports
+;;          golang.org/x/tools/cmd/oracle
+
+(if (eq system-type 'darwin)
+    (exec-path-from-shell-copy-env "GOPATH"))
+
 
 (ue-ensure-installed '(go-mode go-eldoc))
 
@@ -11,12 +16,13 @@
 (add-hook 'go-mode-hook (lambda ()
                           (setq tab-width 4)))
 
+(setq gofmt-command "goimports")
 (add-hook 'before-save-hook #'gofmt-before-save)
 
 (define-key go-mode-map (kbd "C-c C-d") #'godoc-at-point)
 (define-key go-mode-map (kbd "M-.") #'godef-jump)
 
-(setq gofmt-command "goimports")
+(load-file (expand-file-name "src/golang.org/x/tools/cmd/oracle/oracle.el" (getenv "GOPATH")))
 
 
 (if (boundp 'ue-company-enabled)

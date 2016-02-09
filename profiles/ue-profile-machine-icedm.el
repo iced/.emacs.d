@@ -1,5 +1,4 @@
 (require 'ue-basic)
-(require 'ue-osx)
 (require 'ue-ido)
 (require 'ue-company)
 (require 'ue-projectile)
@@ -13,12 +12,8 @@
 (require 'ue-scala)
 (require 'ue-theme-misterioso)
 
+(menu-bar-mode -1)
+(setq insert-directory-program "gls")
 (set-face-attribute 'default nil :height 140)
-
-(ue-add-to-path "/usr/local/bin")
-(ue-add-to-path (expand-file-name "~/.bin"))
-
-(setenv "GOPATH" (expand-file-name "~/dev/go"))
-(ue-add-to-path (expand-file-name "~/dev/go/bin"))
 
 (provide 'ue-profile-machine-icedm)
