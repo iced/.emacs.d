@@ -3,6 +3,8 @@
 (setq ido-everywhere t)
 
 (add-to-list 'ido-ignore-buffers "\\`\\*")
+(add-to-list 'ido-ignore-files "\\`\\.")
+(add-to-list 'ido-ignore-directories "\\`\\.")
 
 (defvar ue-ido-enabled t)
 (provide 'ue-ido)

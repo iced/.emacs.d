@@ -16,4 +16,9 @@
 (setq insert-directory-program "gls")
 (set-face-attribute 'default nil :height 140)
 
+(dolist (dir '("Applications/" "Desktop/" "Documents/" "Downloads/" "Library/" "Movies/" "Music/" "Pictures/" "Public/"))
+  (progn
+    (add-to-list 'ido-ignore-files dir)
+    (add-to-list 'ido-ignore-directories dir)))
+
 (provide 'ue-profile-machine-icedm)
