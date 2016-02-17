@@ -12,5 +12,7 @@
 
 (ue-ensure-installed '(ag))
 
+(server-start)
+
 (defvar ue-basic-enabled t)
 (provide 'ue-basic)
