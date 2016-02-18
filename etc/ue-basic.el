@@ -18,6 +18,8 @@
 
 (defalias 'list-buffers 'ibuffer)
 
+(setq auto-revert-mode nil)
+
 (server-start)
 
 (defvar ue-basic-enabled t)
