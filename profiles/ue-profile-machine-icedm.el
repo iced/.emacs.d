@@ -1,5 +1,6 @@
 (require 'ue-basic)
 (require 'ue-ido)
+(require 'ue-helm)
 (require 'ue-company)
 (require 'ue-projectile)
 (require 'ue-paredit)
