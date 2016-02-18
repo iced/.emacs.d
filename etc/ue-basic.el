@@ -13,7 +13,10 @@
 (ue-ensure-installed '(ag))
 
 (ue-ensure-installed '(undo-tree))
+(setq undo-tree-visualizer-diff t)
 (global-undo-tree-mode 1)
+
+(defalias 'list-buffers 'ibuffer)
 
 (server-start)
 
