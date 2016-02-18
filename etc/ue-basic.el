@@ -12,6 +12,9 @@
 
 (ue-ensure-installed '(ag))
 
+(ue-ensure-installed '(undo-tree))
+(global-undo-tree-mode 1)
+
 (server-start)
 
 (defvar ue-basic-enabled t)
