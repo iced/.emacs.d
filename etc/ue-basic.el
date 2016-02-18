@@ -14,6 +14,7 @@
 
 (ue-ensure-installed '(undo-tree))
 (global-undo-tree-mode 1)
+(delight 'undo-tree-mode nil "Undo-Tree")
 
 (defalias 'list-buffers 'ibuffer)
 
