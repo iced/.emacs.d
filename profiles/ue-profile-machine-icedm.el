@@ -3,6 +3,7 @@
 (require 'ue-helm)
 (require 'ue-company)
 (require 'ue-projectile)
+(require 'ue-yas)
 (require 'ue-paredit)
 (require 'ue-emacs-lisp)
 (require 'ue-cl)
