@@ -20,6 +20,8 @@
 
 (setq auto-revert-mode nil)
 
+(electric-pair-mode 1)
+
 (server-start)
 
 (defvar ue-basic-enabled t)

@@ -10,7 +10,7 @@
 (require 'package)
 
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+             '("melpa" . "http://melpa.org/packages/") t)
 
 (setq package-user-dir (expand-file-name "packages" ue-var-dir))
 (package-initialize)
