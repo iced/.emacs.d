@@ -50,7 +50,7 @@
 
 (transient-mark-mode t)
 
-(setq auto-revert-mode nil)
+(global-auto-revert-mode -1)
 
 (setq default-truncate-lines t)
 
