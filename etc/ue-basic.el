@@ -80,6 +80,8 @@
 (global-undo-tree-mode 1)
 (delight 'undo-tree-mode nil "Undo-Tree")
 
+(setq tramp-persistency-file-name (expand-file-name "tramp" ue-var-dir))
+
 (defalias 'list-buffers 'ibuffer)
 
 (server-start)
