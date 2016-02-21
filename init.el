@@ -30,8 +30,6 @@
       (exec-path-from-shell-initialize)))
 
 
-(require 'ue-defaults)
-
 (defvar ue-profile (car (split-string (system-name) "\\\.")))
 
 (require (intern (concat "ue-profile-machine-" ue-profile)) nil t)
