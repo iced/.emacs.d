@@ -4,6 +4,10 @@
 (custom-set-faces
  '(header-line ((t (:background "steel" :foreground "#333333")))))
 
+(if (boundp 'ue-helm-enabled)
+    (custom-set-faces
+     '(helm-source-header ((t (:background "#22083397778B" :foreground "white"))))))
+
 (if (boundp 'ue-company-enabled)
     (custom-set-faces
      '(company-tooltip ((t (:background "steel"))))))
