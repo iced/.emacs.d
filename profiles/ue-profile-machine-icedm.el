@@ -23,4 +23,6 @@
     (add-to-list 'ido-ignore-files dir)
     (add-to-list 'ido-ignore-directories dir)))
 
+(setq org-agenda-files '("~/org/it.org"))
+
 (provide 'ue-profile-machine-icedm)

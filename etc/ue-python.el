@@ -3,7 +3,6 @@
 (setq anaconda-mode-installation-directory (expand-file-name "anaconda-mode" ue-var-dir))
 
 (setq python-shell-interpreter "ipython")
-(setq python-indent-offset 2)
 
 (require 'anaconda-mode)
 (require 'virtualenvwrapper)
