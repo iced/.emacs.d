@@ -12,7 +12,9 @@
 (require 'ue-go)
 (require 'ue-ess)
 (require 'ue-scala)
-(require 'ue-theme-misterioso)
+(require 'ue-theme)
+
+(ue-theme-load "zenburn")
 
 (menu-bar-mode -1)
 (setq insert-directory-program "gls")
