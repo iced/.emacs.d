@@ -40,13 +40,30 @@
     (unless (eq env-line nil)
       (substring env-line (+ (length name) 2) -1))))
 
-(defun ue-go-gb-set-gopath ()
-  (interactive)
-  (let ((project-dir (ue-go-gb-env-value "GB_PROJECT_DIR")))
-    (unless (eq project-dir nil)
-      (setenv "GOPATH" (concat project-dir ":" (expand-file-name "vendor" project-dir))))))
+(defun ue-go-gb-root ()
+  (ue-go-gb-env-value "GB_PROJECT_DIR"))
 
-(define-key go-mode-map (kbd "C-c C-e") #'ue-go-gb-set-gopath)
+(defun ue-go-projectile-root ()
+  (if (boundp 'ue-projectile-enabled)
+      (if (projectile-project-p)
+          (projectile-project-root))))
+
+(defun ue-go-root ()
+  (or (ue-go-gb-root) (ue-go-projectile-root)))
+
+(defun ue-go-make-gopath (root)
+  (concat root ":" (expand-file-name "vendor" root)))
+
+(defun ue-go-set-gopath ()
+  (interactive)
+  (let ((root (ue-go-root)))
+    (if (eq root nil)
+        (message "GOPATH=%s" (getenv "GOPATH"))
+        (let ((gopath (ue-go-make-gopath root)))
+          (setenv "GOPATH" gopath)
+          (message "GOPATH=%s" gopath)))))
+
+(define-key go-mode-map (kbd "C-c C-e") #'ue-go-set-gopath)
 
 
 (if (boundp 'ue-company-enabled)
