@@ -1,6 +1,7 @@
 (defun ue-theme-load (name)
   (interactive
-   (list (completing-read "Theme: " '("misterioso" "zenburn"))))
+   (list
+    (completing-read "Theme: " '("misterioso" "zenburn"))))
   (mapcar #'disable-theme custom-enabled-themes)
   (require (intern (concat "ue-theme-" name)))
   (funcall (intern (concat "ue-theme-" name "-init"))))

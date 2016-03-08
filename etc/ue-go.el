@@ -55,14 +55,16 @@
 (defun ue-go-make-gopath (root)
   (concat root ":" (expand-file-name "vendor" root)))
 
-(defun ue-go-set-gopath ()
-  (interactive)
+(defun ue-go-guess-gopath ()
   (let ((root (ue-go-root)))
-    (if (eq root nil)
-        (message "GOPATH=%s" (getenv "GOPATH"))
-        (let ((gopath (ue-go-make-gopath root)))
-          (setenv "GOPATH" gopath)
-          (message "GOPATH=%s" gopath)))))
+    (if (eq root nil) (or (getenv "GOPATH") "") (ue-go-make-gopath root))))
+
+(defun ue-go-set-gopath (gopath)
+  (interactive
+   (list
+    (read-string "GOPATH=" (ue-go-guess-gopath))))
+  (unless (equal gopath "")
+    (setenv "GOPATH" gopath)))
 
 (define-key go-mode-map (kbd "C-c C-e") #'ue-go-set-gopath)
 
