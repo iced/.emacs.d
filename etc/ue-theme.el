@@ -1,4 +1,4 @@
-(defun ue-theme-load (name)
+(defun ue-theme-set (name)
   (interactive
    (list
     (completing-read "Theme: " '("misterioso" "zenburn"))))

@@ -5,9 +5,9 @@
 (require 'ue-paredit)
 (require 'ue-emacs-lisp)
 (require 'ue-clojure)
-(require 'ue-python)
-(require 'ue-go)
-(require 'ue-ess)
-(require 'ue-theme-misterioso)
+(require 'ue-theme)
+
+(ue-theme-set "misterioso")
+
 
 (provide 'ue-profile-machine-dev)

@@ -14,7 +14,7 @@
 (require 'ue-scala)
 (require 'ue-theme)
 
-(ue-theme-load "zenburn")
+(ue-theme-set "zenburn")
 
 (menu-bar-mode -1)
 (setq insert-directory-program "gls")
