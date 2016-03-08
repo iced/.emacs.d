@@ -19,6 +19,7 @@
   (pydoc (thing-at-point 'symbol)))
 
 (define-key python-mode-map (kbd "C-c C-d") #'pydoc-at-point)
+(define-key python-mode-map (kbd "C-c C-e") #'venv-workon)
 
 
 (if (boundp 'ue-basic-enabled)
