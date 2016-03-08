@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dd2
+# key: dd2
+# --
+fmt.Printf("%+v %+v\n", $1, $2)$0

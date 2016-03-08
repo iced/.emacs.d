@@ -54,8 +54,6 @@
 
 (setq default-truncate-lines t)
 
-(electric-pair-mode 1)
-
 (show-paren-mode t)
 
 (setq dired-listing-switches "-Bhl --group-directories-first")
