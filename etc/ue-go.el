@@ -50,21 +50,24 @@
           (projectile-project-root))))
 
 (defun ue-go-root ()
-  (or (ue-go-gb-root) (ue-go-projectile-root)))
+  (or
+   (ue-go-gb-root)
+   (ue-go-projectile-root)
+   (getenv "GOPATH")
+   default-directory))
 
-(defun ue-go-make-gopath (root)
-  (concat root ":" (expand-file-name "vendor" root)))
-
-(defun ue-go-guess-gopath ()
-  (let ((root (ue-go-root)))
-    (if (eq root nil) (or (getenv "GOPATH") "") (ue-go-make-gopath root))))
+(defun ue-go-expand-gopath (gopath)
+  (let* ((expanded-gopath (expand-file-name "." gopath))
+         (expanded-vendor-gopath (expand-file-name "vendor" gopath)))
+    (if (file-exists-p expanded-vendor-gopath)
+        (concat expanded-gopath ":" expanded-vendor-gopath)
+      expanded-gopath)))
 
 (defun ue-go-set-gopath (gopath)
   (interactive
    (list
-    (read-string "GOPATH=" (ue-go-guess-gopath))))
-  (unless (equal gopath "")
-    (setenv "GOPATH" gopath)))
+    (read-directory-name "GOPATH=" (expand-file-name "." (ue-go-root)))))
+  (setenv "GOPATH" (ue-go-expand-gopath gopath)))
 
 (define-key go-mode-map (kbd "C-c C-e") #'ue-go-set-gopath)
 
