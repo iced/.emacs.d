@@ -27,7 +27,7 @@
 
 (load-file (expand-file-name
             "src/golang.org/x/tools/cmd/oracle/oracle.el"
-            (expand-file-name ".." (file-name-directory (locate-file "oracle" exec-path)))))
+            (expand-file-name ".." (file-name-directory (executable-find "oracle")))))
 
 
 (defun ue-go-gb-env-line (name)
