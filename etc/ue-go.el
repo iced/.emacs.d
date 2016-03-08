@@ -41,7 +41,8 @@
       (substring env-line (+ (length name) 2) -1))))
 
 (defun ue-go-gb-root ()
-  (ue-go-gb-env-value "GB_PROJECT_DIR"))
+  (if (executable-find "gb")
+      (ue-go-gb-env-value "GB_PROJECT_DIR")))
 
 (defun ue-go-projectile-root ()
   (if (boundp 'ue-projectile-enabled)
