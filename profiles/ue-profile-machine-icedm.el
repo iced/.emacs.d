@@ -10,6 +10,7 @@
 (require 'ue-clojure)
 (require 'ue-python)
 (require 'ue-go)
+(require 'ue-js)
 (require 'ue-ess)
 (require 'ue-scala)
 (require 'ue-theme)
