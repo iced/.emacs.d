@@ -65,10 +65,7 @@
 (ue-ensure-installed '(delight))
 (delight 'eldoc-mode nil "eldoc")
 
-(ue-ensure-installed '(json-mode))
-(ue-ensure-installed '(csv-mode))
-(ue-ensure-installed '(yaml-mode))
-
+(ue-ensure-installed '(json-mode csv-mode yaml-mode markdown-mode))
 (ue-ensure-installed '(dockerfile-mode))
 
 (ue-ensure-installed '(magit))

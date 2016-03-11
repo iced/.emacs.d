@@ -21,11 +21,11 @@
 (setq insert-directory-program "gls")
 (set-face-attribute 'default nil :height 140)
 
-(dolist (dir '("Applications/" "Desktop/" "Documents/" "Downloads/" "Library/" "Movies/" "Music/" "Pictures/" "Public/"))
+(dolist (dir '("Applications/" "Desktop/" "Documents/" "Downloads/" "Dropbox/" "Library/" "Movies/" "Music/" "Pictures/" "Public/"))
   (progn
     (add-to-list 'ido-ignore-files dir)
     (add-to-list 'ido-ignore-directories dir)))
 
-(setq org-agenda-files '("~/org/it.org"))
+(setq org-agenda-files '("~/Dropbox/Data/org/it.org"))
 
 (provide 'ue-profile-machine-icedm)
