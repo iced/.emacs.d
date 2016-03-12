@@ -8,10 +8,11 @@
 (if (eq system-type 'darwin)
     (exec-path-from-shell-copy-env "GOPATH"))
 
-(ue-ensure-installed '(go-mode go-eldoc))
+(ue-ensure-installed '(go-mode go-eldoc go-gopath))
 
 (require 'go-mode)
 (require 'go-eldoc)
+(require 'go-gopath)
 
 (add-hook 'go-mode-hook #'go-eldoc-setup)
 (add-hook 'go-mode-hook (lambda ()
@@ -29,47 +30,7 @@
             "src/golang.org/x/tools/cmd/oracle/oracle.el"
             (expand-file-name ".." (file-name-directory (executable-find "oracle")))))
 
-
-(defun ue-go-gb-env-line (name)
-  (unless (eq buffer-file-name nil)
-    (let ((gbe-env (split-string (shell-command-to-string "gb env") "\n")))
-      (car (remove-if-not (lambda (e) (string-prefix-p name e)) gbe-env)))))
-
-(defun ue-go-gb-env-value (name)
-  (let ((env-line (ue-go-gb-env-line name)))
-    (unless (eq env-line nil)
-      (substring env-line (+ (length name) 2) -1))))
-
-(defun ue-go-gb-root ()
-  (if (executable-find "gb")
-      (ue-go-gb-env-value "GB_PROJECT_DIR")))
-
-(defun ue-go-projectile-root ()
-  (if (boundp 'ue-projectile-enabled)
-      (if (projectile-project-p)
-          (projectile-project-root))))
-
-(defun ue-go-root ()
-  (or
-   (ue-go-gb-root)
-   (ue-go-projectile-root)
-   (getenv "GOPATH")
-   default-directory))
-
-(defun ue-go-expand-gopath (gopath)
-  (let* ((expanded-gopath (expand-file-name "." gopath))
-         (expanded-vendor-gopath (expand-file-name "vendor" gopath)))
-    (if (file-exists-p expanded-vendor-gopath)
-        (concat expanded-gopath ":" expanded-vendor-gopath)
-      expanded-gopath)))
-
-(defun ue-go-set-gopath (gopath)
-  (interactive
-   (list
-    (read-directory-name "GOPATH=" (expand-file-name "." (ue-go-root)))))
-  (setenv "GOPATH" (ue-go-expand-gopath gopath)))
-
-(define-key go-mode-map (kbd "C-c C-e") #'ue-go-set-gopath)
+(define-key go-mode-map (kbd "C-c C-e") #'go-gopath-set-gopath)
 
 
 (if (boundp 'ue-company-enabled)

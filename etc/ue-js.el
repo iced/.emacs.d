@@ -1,9 +1,12 @@
-(ue-ensure-installed '(js2-mode))
+(ue-ensure-installed '(js2-mode nodejs-repl))
 (require 'js2-mode)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
-(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js2-mode-hook
+          (lambda ()
+            (tern-mode t)
+            (auto-revert-mode -1)))
 
 
 (if (boundp 'ue-company-enabled)
