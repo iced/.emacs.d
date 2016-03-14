@@ -23,6 +23,7 @@
 (setq gofmt-command "goimports")
 (add-hook 'before-save-hook #'gofmt-before-save)
 
+(setq godoc-command "godoc")
 (define-key go-mode-map (kbd "C-c C-d") #'godoc-at-point)
 (define-key go-mode-map (kbd "M-.") #'godef-jump)
 
