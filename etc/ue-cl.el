@@ -21,5 +21,6 @@
       (define-key slime-repl-mode-map (kbd "M-TAB") #'company-complete)
       (add-hook 'slime-repl-mode-hook #'company-mode)))
 
+
 (defvar ue-cl-enabled t)
 (provide 'ue-cl)
