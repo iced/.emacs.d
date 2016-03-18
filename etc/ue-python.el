@@ -1,25 +1,22 @@
-(ue-ensure-installed '(anaconda-mode virtualenvwrapper pydoc))
+(ue-ensure-installed '(pyenv-mode anaconda-mode pydoc))
 
 (setq anaconda-mode-installation-directory (expand-file-name "anaconda-mode" ue-var-dir))
 
 (setq python-shell-interpreter "ipython")
 
+(require 'pyenv-mode)
 (require 'anaconda-mode)
-(require 'virtualenvwrapper)
 (require 'pydoc)
 
 (add-hook 'python-mode-hook #'anaconda-mode)
 (add-hook 'python-mode-hook #'eldoc-mode)
-
-(venv-initialize-interactive-shells)
-(venv-initialize-eshell)
 
 (defun pydoc-at-point ()
   (interactive)
   (pydoc (thing-at-point 'symbol)))
 
 (define-key python-mode-map (kbd "C-c C-d") #'pydoc-at-point)
-(define-key python-mode-map (kbd "C-c C-e") #'venv-workon)
+(define-key python-mode-map (kbd "C-c C-e") #'pyenv-mode-set)
 
 
 (if (boundp 'ue-basic-enabled)
