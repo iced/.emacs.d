@@ -18,7 +18,7 @@
 (add-hook 'go-mode-hook (lambda ()
                           (setq tab-width 4)
                           (set (make-local-variable 'compile-command)
-                               "gb build")))
+                               "go build")))
 
 (setq gofmt-command "goimports")
 (add-hook 'before-save-hook #'gofmt-before-save)

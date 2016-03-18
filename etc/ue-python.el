@@ -1,4 +1,4 @@
-(ue-ensure-installed '(pyenv-mode anaconda-mode pydoc))
+(ue-ensure-installed '(pyenv-mode anaconda-mode))
 
 (setq anaconda-mode-installation-directory (expand-file-name "anaconda-mode" ue-var-dir))
 
@@ -6,16 +6,15 @@
 
 (require 'pyenv-mode)
 (require 'anaconda-mode)
-(require 'pydoc)
 
 (add-hook 'python-mode-hook #'anaconda-mode)
-(add-hook 'python-mode-hook #'eldoc-mode)
+(add-hook 'python-mode-hook #'anaconda-eldoc-mode)
 
 (defun pydoc-at-point ()
   (interactive)
   (pydoc (thing-at-point 'symbol)))
 
-(define-key python-mode-map (kbd "C-c C-d") #'pydoc-at-point)
+(define-key python-mode-map (kbd "C-c C-d") #'anaconda-mode-show-doc)
 (define-key python-mode-map (kbd "C-c C-e") #'pyenv-mode-set)
 
 
