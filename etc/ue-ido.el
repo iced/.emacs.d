@@ -9,7 +9,6 @@
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
 
-(add-to-list 'ido-ignore-buffers "\\`\\*")
 (add-to-list 'ido-ignore-files "\\`\\.")
 (add-to-list 'ido-ignore-directories "\\`\\.")
 

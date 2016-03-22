@@ -2,7 +2,7 @@
 
 (require 'cider)
 
-(add-hook 'cider-mode-hook #'eldoc-mode)
+(add-hook 'cider-mode-hook #'cider-turn-on-eldoc-mode)
 
 
 (if (boundp 'ue-paredit-enabled)
