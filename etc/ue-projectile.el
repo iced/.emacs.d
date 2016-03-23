@@ -5,6 +5,14 @@
 
 (require 'projectile)
 
+(setq projectile-mode-line
+      '(:eval
+        (if (file-remote-p default-directory)
+            ""
+          (if (equal (projectile-project-name) "-")
+              ""
+            (format " Projectile[%s]" (projectile-project-name))))))
+
 (projectile-global-mode)
 
 (defvar ue-projectile-enabled t)
