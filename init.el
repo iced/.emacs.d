@@ -9,6 +9,8 @@
 
 (require 'package)
 
+(setq package-selected-packages nil)
+
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
 
