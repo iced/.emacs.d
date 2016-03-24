@@ -10,10 +10,6 @@
 (add-hook 'python-mode-hook #'anaconda-mode)
 (add-hook 'python-mode-hook #'anaconda-eldoc-mode)
 
-(defun pydoc-at-point ()
-  (interactive)
-  (pydoc (thing-at-point 'symbol)))
-
 (define-key python-mode-map (kbd "C-c C-d") #'anaconda-mode-show-doc)
 (define-key python-mode-map (kbd "C-c C-e") #'pyenv-mode-set)
 
