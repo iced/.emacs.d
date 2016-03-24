@@ -1,3 +1,5 @@
+(server-start)
+
 (setq frame-title-format '("" "emacs" " - " "%b"))
 
 (toggle-frame-fullscreen)
@@ -83,7 +85,7 @@
 
 (defalias 'list-buffers 'ibuffer)
 
-(server-start)
+(setq erc-modules '(completion irccontrols list match move-to-prompt netsplit networks noncommands readonly ring track))
 
 (defvar ue-basic-enabled t)
 (provide 'ue-basic)
