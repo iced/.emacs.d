@@ -69,6 +69,7 @@
 (ue-ensure-installed '(dockerfile-mode))
 
 (ue-ensure-installed '(magit))
+(magit-auto-revert-mode -1)
 (global-set-key (kbd "C-x g") #'magit-status)
 
 (ue-ensure-installed '(ag))
