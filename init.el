@@ -6,6 +6,9 @@
 (add-to-list 'load-path ue-etc-dir)
 (add-to-list 'load-path ue-profiles-dir)
 
+(setq custom-file (expand-file-name "custom.el" ue-var-dir))
+(if (file-exists-p custom-file)
+    (load custom-file))
 
 (require 'package)
 
