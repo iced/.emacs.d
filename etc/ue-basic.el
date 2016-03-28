@@ -76,6 +76,7 @@
 (global-set-key (kbd "C-x g") #'magit-status)
 
 (ue-ensure-installed '(ag))
+(ue-ensure-installed '(gist))
 
 (ue-ensure-installed '(undo-tree))
 (global-undo-tree-mode 1)
