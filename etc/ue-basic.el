@@ -82,6 +82,9 @@
 (global-undo-tree-mode 1)
 (delight 'undo-tree-mode nil "Undo-Tree")
 
+(ue-ensure-installed '(ace-jump-mode))
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
 (setq tramp-persistency-file-name (expand-file-name "tramp" ue-var-dir))
 
 (defalias 'list-buffers 'ibuffer)
