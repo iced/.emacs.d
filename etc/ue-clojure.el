@@ -18,5 +18,6 @@
       (define-key cider-repl-mode-map (kbd "M-TAB") #'company-complete)
       (add-hook 'cider-repl-mode-hook #'company-mode)))
 
+
 (defvar ue-clojure-enabled t)
 (provide 'ue-clojure)

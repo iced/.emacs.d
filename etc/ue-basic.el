@@ -47,15 +47,13 @@
 (setq create-lockfiles nil)
 (setq backup-inhibited t)
 (setq auto-save-default nil)
-(setq auto-save-list-file-prefix (expand-file-name "auto-save-" ue-var-dir))
+(global-auto-revert-mode -1)
 
 (setq-default indent-tabs-mode nil)
 
 (auto-compression-mode t)
 
 (transient-mark-mode t)
-
-(global-auto-revert-mode -1)
 
 (setq default-truncate-lines t)
 
@@ -82,14 +80,17 @@
 (global-undo-tree-mode 1)
 (delight 'undo-tree-mode nil "Undo-Tree")
 
-(ue-ensure-installed '(ace-jump-mode))
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(ue-ensure-installed '(avy))
+(setq avy-style 'at)
+(global-set-key (kbd "C-;") 'avy-goto-char)
+(global-set-key (kbd "C-'") 'avy-goto-word-1)
 
 (setq tramp-persistency-file-name (expand-file-name "tramp" ue-var-dir))
 
 (defalias 'list-buffers 'ibuffer)
 
 (setq erc-modules '(completion irccontrols list match move-to-prompt netsplit networks noncommands readonly ring track))
+
 
 (defvar ue-basic-enabled t)
 (provide 'ue-basic)

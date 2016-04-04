@@ -14,5 +14,6 @@
       (define-key scala-mode-map (kbd "M-TAB") #'company-complete)
       (add-hook 'ensime-mode-hook (lambda () (kill-local-variable 'company-idle-delay)))))
 
+
 (defvar ue-scala-enabled t)
 (provide 'ue-scala)

@@ -8,5 +8,6 @@
 (if (boundp 'ue-basic-enabled)
     (delight 'company-mode nil "company"))
 
+
 (defvar ue-company-enabled t)
 (provide 'ue-company)

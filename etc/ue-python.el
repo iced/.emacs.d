@@ -27,5 +27,6 @@
       (add-hook 'inferior-python-mode-hook #'company-mode)
       (define-key inferior-python-mode-map (kbd "M-TAB") #'company-complete)))
 
+
 (defvar ue-python-enabled t)
 (provide 'ue-python)

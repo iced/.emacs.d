@@ -6,5 +6,6 @@
 (yas-global-mode 1)
 (delight 'yas-minor-mode nil "yasnippet")
 
+
 (defvar ue-yas-enabled t)
 (provide 'ue-yas)

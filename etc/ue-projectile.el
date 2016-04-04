@@ -15,5 +15,6 @@
 
 (projectile-global-mode)
 
+
 (defvar ue-projectile-enabled t)
 (provide 'ue-projectile)

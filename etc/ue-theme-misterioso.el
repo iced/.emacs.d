@@ -12,5 +12,6 @@
       (custom-set-faces
        '(company-tooltip ((t (:background "steel")))))))
 
+
 (defvar ue-theme-misterioso-enabled t)
 (provide 'ue-theme-misterioso)

@@ -1,10 +1,3 @@
-;; go get github.com/nsf/gocode
-;; go get github.com/rogpeppe/godef
-;; go get golang.org/x/tools/cmd/goimports
-;; go get golang.org/x/tools/cmd/gorename
-;; go get golang.org/x/tools/cmd/oracle
-;; go get github.com/constabulary/gb/...
-
 (if (eq system-type 'darwin)
     (exec-path-from-shell-copy-env "GOPATH"))
 

@@ -7,14 +7,10 @@
 (require 'ue-yas)
 (require 'ue-paredit)
 (require 'ue-emacs-lisp)
-(require 'ue-cl)
 (require 'ue-clojure)
 (require 'ue-python)
 (require 'ue-go)
 (require 'ue-js)
-(require 'ue-ess)
-(require 'ue-scala)
-(require 'ue-sql)
 (require 'ue-theme)
 
 (ue-theme-set "zenburn")
@@ -29,5 +25,6 @@
     (add-to-list 'ido-ignore-directories dir)))
 
 (setq org-agenda-files '("~/Dropbox/Data/org/it.org"))
+
 
 (provide 'ue-profile-machine-icedm)
