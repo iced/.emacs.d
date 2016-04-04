@@ -47,6 +47,7 @@
 (setq create-lockfiles nil)
 (setq backup-inhibited t)
 (setq auto-save-default nil)
+(setq auto-save-list-file-prefix (expand-file-name "auto-save-" ue-var-dir))
 (global-auto-revert-mode -1)
 
 (setq-default indent-tabs-mode nil)
