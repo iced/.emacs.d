@@ -79,12 +79,16 @@
 
 (ue-ensure-installed '(undo-tree))
 (global-undo-tree-mode 1)
-(delight 'undo-tree-mode nil "Undo-Tree")
+(delight 'undo-tree-mode nil "undo-tree")
 
 (ue-ensure-installed '(avy))
 (setq avy-style 'at)
 (global-set-key (kbd "C-;") 'avy-goto-char)
 (global-set-key (kbd "C-'") 'avy-goto-word-1)
+
+(ue-ensure-installed '(which-key))
+(which-key-mode)
+(delight 'which-key-mode nil "which-key")
 
 (setq tramp-persistency-file-name (expand-file-name "tramp" ue-var-dir))
 

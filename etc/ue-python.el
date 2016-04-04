@@ -13,9 +13,7 @@
 (define-key python-mode-map (kbd "C-c C-d") #'anaconda-mode-show-doc)
 (define-key python-mode-map (kbd "C-c C-e") #'pyenv-mode-set)
 
-
-(if (boundp 'ue-basic-enabled)
-    (delight 'anaconda-mode nil "anaconda-mode"))
+(delight 'anaconda-mode nil "anaconda-mode")
 
 
 (if (boundp 'ue-company-enabled)

@@ -5,8 +5,7 @@
 
 (require 'company)
 
-(if (boundp 'ue-basic-enabled)
-    (delight 'company-mode nil "company"))
+(delight 'company-mode nil "company")
 
 
 (defvar ue-company-enabled t)
