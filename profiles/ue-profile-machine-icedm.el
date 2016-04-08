@@ -27,4 +27,13 @@
 (setq org-agenda-files '("~/Dropbox/Data/org/it.org"))
 
 
+(ue-ensure-installed '(osx-dictionary))
+(delight 'osx-dictionary-mode "Dictionary" "osx-dictionary")
+
+(setq osx-dictionary-dictionary-choice '("Dictionary"))
+(global-set-key (kbd "C-c t") 'osx-dictionary-search-input)
+
+(add-hook 'osx-dictionary-mode-hook (lambda () (toggle-truncate-lines -1)))
+
+
 (provide 'ue-profile-machine-icedm)
