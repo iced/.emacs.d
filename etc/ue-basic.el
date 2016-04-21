@@ -96,6 +96,17 @@
 
 (setq erc-modules '(completion irccontrols list match move-to-prompt netsplit networks noncommands readonly ring track))
 
+(setq url-configuration-directory (expand-file-name "url" ue-var-dir))
+
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
+(ue-ensure-installed '(howdoi))
+(global-set-key (kbd "C-c h") 'howdoi-query)
+
+(ue-ensure-installed '(sx))
+(setq sx-cache-directory (expand-file-name "sx" ue-var-dir))
+(setq sx-default-site "stackoverflow")
+(global-set-key (kbd "C-c s") 'sx-search)
 
 (defvar ue-basic-enabled t)
 (provide 'ue-basic)

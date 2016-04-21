@@ -8,6 +8,7 @@
 (require 'ue-paredit)
 (require 'ue-emacs-lisp)
 (require 'ue-clojure)
+(require 'ue-cl)
 (require 'ue-python)
 (require 'ue-go)
 (require 'ue-js)
@@ -24,8 +25,10 @@
     (add-to-list 'ido-ignore-files dir)
     (add-to-list 'ido-ignore-directories dir)))
 
-(setq org-agenda-files '("~/Dropbox/Data/org/it.org"))
-
+(setq org-agenda-files '("~/Dropbox/Data/org/it.org" "~/Dropbox/Data/org/notes.org"))
+(setq org-capture-templates
+      '(("c" "capture" entry (file+headline "~/Dropbox/Data/notes.org" "Notes")
+         "* %?")))
 
 (ue-ensure-installed '(osx-dictionary))
 (delight 'osx-dictionary-mode "Dictionary" "osx-dictionary")
