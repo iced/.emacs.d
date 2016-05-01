@@ -48,7 +48,7 @@
 (setq backup-inhibited t)
 (setq auto-save-default nil)
 (setq auto-save-list-file-prefix (expand-file-name "auto-save-" ue-var-dir))
-(global-auto-revert-mode -1)
+(global-auto-revert-mode)
 
 (setq-default indent-tabs-mode nil)
 
@@ -107,6 +107,16 @@
 (setq sx-cache-directory (expand-file-name "sx" ue-var-dir))
 (setq sx-default-site "stackoverflow")
 (global-set-key (kbd "C-c s") 'sx-search)
+
+(global-set-key (kbd "M-/") 'hippie-expand)
+
+(ue-ensure-installed '(anzu))
+(require 'anzu)
+(global-anzu-mode t)
+(setq anzu-mode-lighter nil)
+(global-set-key (kbd "M-%") 'anzu-query-replace)
+(global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
+
 
 (defvar ue-basic-enabled t)
 (provide 'ue-basic)
