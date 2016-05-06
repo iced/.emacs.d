@@ -117,6 +117,8 @@
 (global-set-key (kbd "M-%") 'anzu-query-replace)
 (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
 
+(ue-ensure-installed '(scratch))
+
 
 (defvar ue-basic-enabled t)
 (provide 'ue-basic)
