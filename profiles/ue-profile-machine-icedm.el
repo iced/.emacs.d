@@ -25,10 +25,10 @@
     (add-to-list 'ido-ignore-files dir)
     (add-to-list 'ido-ignore-directories dir)))
 
-(setq org-agenda-files '("~/Dropbox/Data/org/it.org" "~/Dropbox/Data/org/notes.org"))
+(setq org-agenda-files '("~/org/it.org" "~/org/journal.org"))
 (setq org-capture-templates
-      '(("c" "capture" entry (file+headline "~/Dropbox/Data/notes.org" "Notes")
-         "* %?")))
+      '(("n" "Note" entry (file+headline "~/org/journal.org" "Notes") "** %?")
+        ("t" "TODO" entry (file+headline "~/org/journal.org" "TODOs") "** TODO %?")))
 
 (ue-ensure-installed '(osx-dictionary))
 (delight 'osx-dictionary-mode "Dictionary" "osx-dictionary")

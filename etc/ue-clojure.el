@@ -1,4 +1,4 @@
-(ue-ensure-installed '(cider))
+(ue-ensure-installed '(cider clj-refactor))
 
 (require 'cider)
 

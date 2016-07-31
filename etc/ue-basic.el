@@ -65,6 +65,7 @@
 (put 'dired-find-alternate-file 'disabled nil)
 
 (ue-ensure-installed '(delight))
+(require 'delight)
 (delight 'eldoc-mode nil "eldoc")
 
 (ue-ensure-installed '(json-mode csv-mode yaml-mode markdown-mode))

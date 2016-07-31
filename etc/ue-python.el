@@ -3,6 +3,8 @@
 (setq anaconda-mode-installation-directory (expand-file-name "anaconda-mode" ue-var-dir))
 
 (setq python-shell-interpreter "ipython")
+(setq python-shell-interpreter-args "--simple-prompt --pprint")
+(setq python-shell-completion-native-enable nil)
 
 (require 'pyenv-mode)
 (require 'anaconda-mode)
