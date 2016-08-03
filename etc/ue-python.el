@@ -9,8 +9,14 @@
 (require 'pyenv-mode)
 (require 'anaconda-mode)
 
+(setq pyenv-mode-mode-line-format
+      '(:eval
+        (when (pyenv-mode-version)
+          (concat "[" (pyenv-mode-version) "] "))))
+
 (add-hook 'python-mode-hook #'anaconda-mode)
 (add-hook 'python-mode-hook #'anaconda-eldoc-mode)
+(add-hook 'python-mode-hook #'pyenv-mode)
 
 (define-key python-mode-map (kbd "C-c C-d") #'anaconda-mode-show-doc)
 (define-key python-mode-map (kbd "C-c C-e") #'pyenv-mode-set)
