@@ -11,7 +11,7 @@
 
 (setq pyenv-mode-mode-line-format
       '(:eval
-        (when (pyenv-mode-version)
+        (when (and (pyenv-mode-version) (equal major-mode 'python-mode))
           (concat "[" (pyenv-mode-version) "] "))))
 
 (add-hook 'python-mode-hook #'anaconda-mode)

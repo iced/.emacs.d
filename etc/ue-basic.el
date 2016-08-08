@@ -15,6 +15,7 @@
 (setq initial-major-mode 'fundamental-mode)
 
 (windmove-default-keybindings)
+(winner-mode 1)
 
 (line-number-mode t)
 (column-number-mode t)
