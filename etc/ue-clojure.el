@@ -1,8 +1,14 @@
 (ue-ensure-installed '(cider clj-refactor))
 
 (require 'cider)
+(require 'clj-refactor)
+
+(setq cider-prompt-for-symbol nil)
 
 (add-hook 'cider-mode-hook #'eldoc-mode)
+(add-hook 'cider-mode-hook (lambda ()
+                             (clj-refactor-mode 1)
+                             (cljr-add-keybindings-with-prefix "C-c C-m")))
 
 
 (if (boundp 'ue-paredit-enabled)

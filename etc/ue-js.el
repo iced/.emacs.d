@@ -6,6 +6,9 @@
 
 (add-hook 'js3-mode-hook
           (lambda ()
+            (setq js3-auto-indent-p t)
+            (setq js3-enter-indents-newline t)
+            (setq js3-indent-on-enter-key t)
             (tern-mode t)
             (auto-revert-mode -1)))
 

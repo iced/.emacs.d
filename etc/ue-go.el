@@ -21,8 +21,9 @@
 (define-key go-mode-map (kbd "M-.") #'godef-jump)
 
 (load-file (expand-file-name
-            "src/golang.org/x/tools/cmd/oracle/oracle.el"
-            (expand-file-name ".." (file-name-directory (executable-find "oracle")))))
+            "src/golang.org/x/tools/cmd/guru/go-guru.el"
+            (expand-file-name ".." (file-name-directory (executable-find "guru")))))
+(add-hook 'go-mode-hook #'go-guru-hl-identifier-mode)
 
 (define-key go-mode-map (kbd "C-c C-e") #'go-gopath-set-gopath)
 

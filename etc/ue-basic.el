@@ -92,6 +92,10 @@
 (which-key-mode)
 (delight 'which-key-mode nil "which-key")
 
+(ue-ensure-installed '(google-this))
+(google-this-mode 1)
+(delight 'google-this-mode nil "google-this")
+
 (setq tramp-persistency-file-name (expand-file-name "tramp" ue-var-dir))
 
 (defalias 'list-buffers 'ibuffer)

@@ -8,7 +8,6 @@
 (require 'ue-paredit)
 (require 'ue-emacs-lisp)
 (require 'ue-clojure)
-(require 'ue-cl)
 (require 'ue-python)
 (require 'ue-go)
 (require 'ue-js)
