@@ -1,9 +1,10 @@
 (if (eq system-type 'darwin)
     (exec-path-from-shell-copy-env "GOPATH"))
 
-(ue-ensure-installed '(go-mode go-eldoc go-gopath))
+(ue-ensure-installed '(go-mode go-guru go-eldoc go-gopath))
 
 (require 'go-mode)
+(require 'go-guru)
 (require 'go-eldoc)
 (require 'go-gopath)
 
@@ -20,9 +21,6 @@
 (define-key go-mode-map (kbd "C-c C-d") #'godoc-at-point)
 (define-key go-mode-map (kbd "M-.") #'godef-jump)
 
-(load-file (expand-file-name
-            "src/golang.org/x/tools/cmd/guru/go-guru.el"
-            (expand-file-name ".." (file-name-directory (executable-find "guru")))))
 (add-hook 'go-mode-hook #'go-guru-hl-identifier-mode)
 
 (define-key go-mode-map (kbd "C-c C-e") #'go-gopath-set-gopath)

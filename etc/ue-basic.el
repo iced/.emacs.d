@@ -39,6 +39,8 @@
 (blink-cursor-mode 0)
 (setq-default cursor-in-non-selected-windows nil)
 
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
+
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (setq bookmark-default-file (expand-file-name "bookmarks" ue-var-dir))
