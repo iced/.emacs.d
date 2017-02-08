@@ -4,7 +4,6 @@
 
 (toggle-frame-fullscreen)
 
-(menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (tooltip-mode 0)
@@ -19,6 +18,15 @@
 
 (line-number-mode t)
 (column-number-mode t)
+
+(defun ue-is-gui (frame)
+  (memq (framep frame) '(x w32 ns)))
+
+(menu-bar-mode (if (ue-is-gui (selected-frame)) 1 0))
+
+(add-hook 'after-make-frame-functions
+          (lambda (frame)
+            (set-frame-parameter frame 'menu-bar-lines (if (ue-is-gui frame) 1 0))))
 
 (setq-default mode-line-format
               '("%e"
@@ -132,6 +140,7 @@
 (setq uniquify-separator "/")
 (setq uniquify-after-kill-buffer-p t)
 (setq uniquify-ignore-buffers-re "^\\*")
+
 
 (defvar ue-basic-enabled t)
 (provide 'ue-basic)
