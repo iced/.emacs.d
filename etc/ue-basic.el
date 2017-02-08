@@ -133,6 +133,5 @@
 (setq uniquify-after-kill-buffer-p t)
 (setq uniquify-ignore-buffers-re "^\\*")
 
-
 (defvar ue-basic-enabled t)
 (provide 'ue-basic)
