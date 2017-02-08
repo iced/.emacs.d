@@ -1,4 +1,4 @@
-(ue-ensure-installed '(pyenv-mode anaconda-mode))
+(ue-ensure-installed '(pyenv-mode anaconda-mode flymake-python-pyflakes))
 
 (setq anaconda-mode-installation-directory (expand-file-name "anaconda-mode" ue-var-dir))
 
@@ -17,11 +17,14 @@
 (add-hook 'python-mode-hook #'anaconda-mode)
 (add-hook 'python-mode-hook #'anaconda-eldoc-mode)
 (add-hook 'python-mode-hook #'pyenv-mode)
+(add-hook 'python-mode-hook #'flymake-python-pyflakes-load)
 
 (define-key python-mode-map (kbd "C-c C-d") #'anaconda-mode-show-doc)
 (define-key python-mode-map (kbd "C-c C-e") #'pyenv-mode-set)
 
 (delight 'anaconda-mode nil "anaconda-mode")
+
+(setq flymake-python-pyflakes-executable "flake8")
 
 
 (if (boundp 'ue-company-enabled)
