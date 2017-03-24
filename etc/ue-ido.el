@@ -12,7 +12,7 @@
 
 (add-to-list 'ido-ignore-files "\\`\\.")
 (add-to-list 'ido-ignore-directories "\\`\\.")
-
+(add-to-list 'ido-ignore-buffers "^\*")
 
 (defvar ue-ido-enabled t)
 (provide 'ue-ido)

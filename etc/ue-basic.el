@@ -86,6 +86,8 @@
 (magit-auto-revert-mode -1)
 (global-set-key (kbd "C-x g") #'magit-status)
 
+(ue-ensure-installed '(git-timemachine))
+
 (ue-ensure-installed '(ag))
 (ue-ensure-installed '(gist))
 

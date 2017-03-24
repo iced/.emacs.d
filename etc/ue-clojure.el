@@ -1,4 +1,4 @@
-(ue-ensure-installed '(cider clj-refactor))
+(ue-ensure-installed '(cider clj-refactor flycheck-clojure))
 
 (require 'cider)
 (require 'clj-refactor)
