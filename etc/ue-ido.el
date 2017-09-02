@@ -1,18 +1,34 @@
-(ue-ensure-installed '(flx-ido ido-ubiquitous))
+(use-package ido
+  :init
+  (setq ido-save-directory-list-file (expand-file-name "ido" ue-var-dir))
+  (setq ido-enable-flex-matching t)
+  (ido-mode t)
+  (ido-everywhere t)
+  (add-to-list 'ido-ignore-files "\\`\\.")
+  (add-to-list 'ido-ignore-directories "\\`\\.")
+  (add-to-list 'ido-ignore-buffers "^\*"))
 
-(setq ido-save-directory-list-file (expand-file-name "ido" ue-var-dir))
-(ido-mode t)
-(flx-ido-mode 1)
-(ido-everywhere 1)
-(ido-ubiquitous-mode 1)
-(setq ido-enable-flex-matching t)
+(use-package flx-ido
+  :ensure t
+  :init
+  (setq ido-use-faces nil)
+  :config
+  (flx-ido-mode t))
 
-(setq ido-enable-flex-matching t)
-(setq ido-use-faces nil)
+(use-package ido-completing-read+
+  :ensure t
+  :config
+  (ido-ubiquitous-mode t))
 
-(add-to-list 'ido-ignore-files "\\`\\.")
-(add-to-list 'ido-ignore-directories "\\`\\.")
-(add-to-list 'ido-ignore-buffers "^\*")
+(use-package smex
+  :ensure t
+  :init
+  (setq smex-save-file (expand-file-name "smex" ue-var-dir))
+  :config
+  (smex-initialize)
+  :bind
+  (("M-x" . smex)
+   ("M-X" . smex-major-mode-commands)))
 
 (defvar ue-ido-enabled t)
 (provide 'ue-ido)

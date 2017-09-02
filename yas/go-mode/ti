@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: ti
-# key: ti
-# --
-type ${1:name} interface {
-        $0
-}

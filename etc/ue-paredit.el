@@ -1,9 +1,6 @@
-(ue-ensure-installed '(paredit))
-
-(require 'paredit)
-
-(delight 'paredit-mode nil "paredit")
-
+(use-package paredit
+  :ensure t
+  :delight paredit-mode)
 
 (defvar ue-paredit-enabled t)
 (provide 'ue-paredit)
