@@ -13,5 +13,14 @@
                  :map cider-repl-mode-map
                  ("M-TAB" . company-complete))))
 
+(use-package clj-refactor
+  :ensure t
+  :init
+  (add-hook 'clojure-mode-hook
+            (lambda ()
+              (clj-refactor-mode t)
+              (cljr-add-keybindings-with-prefix "C-c C-m")))
+  :delight clj-refactor-mode)
+
 (defvar ue-clojure-enabled t)
 (provide 'ue-clojure)

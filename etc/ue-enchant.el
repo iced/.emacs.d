@@ -25,5 +25,19 @@
    ([remap isearch-query-replace-regexp] . anzu-isearch-query-replace-regexp))
   :delight anzu-mode)
 
+(use-package json-mode
+  :ensure t)
+
+(use-package yaml-mode
+  :ensure t)
+
+(use-package avy
+  :ensure t
+  :init
+  (setq avy-style 'at)
+  :bind
+  ("C-;" . avy-goto-char)
+  ("C-'" . avy-goto-word-1))
+
 (defvar ue-enchant-enabled t)
 (provide 'ue-enchant)
