@@ -52,5 +52,12 @@
   ("C-c m >" . mc/mark-next-like-this)
   ("C-c m a" . mc/mark-all-like-this-dwim))
 
+(use-package helpful
+  :ensure t
+  :bind
+  ("C-h k" . helpful-key)
+  ("C-h v" . helpful-variable)
+  ("C-h f" . helpful-function))
+
 (defvar ue-enchant-enabled t)
 (provide 'ue-enchant)

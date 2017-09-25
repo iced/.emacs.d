@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: trye
+# key: trye
+# --
+try:
+    ${0:pass}
+except ${1:Exception}:
+    ${2:pass}
