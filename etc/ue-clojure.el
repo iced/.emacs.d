@@ -2,10 +2,10 @@
   :ensure t
   :init
   (setq cider-prompt-for-symbol nil)
-  (if (boundp 'ue-paredit-enabled)
+  (if (boundp 'ue-smartparens-enabled)
       (progn
-        (add-hook 'clojure-mode-hook #'enable-paredit-mode)
-        (add-hook 'cider-repl-mode-hook #'enable-paredit-mode)))
+        (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
+        (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)))
   :config
   (if (boundp 'ue-company-enabled)
       (bind-keys :map cider-mode-map

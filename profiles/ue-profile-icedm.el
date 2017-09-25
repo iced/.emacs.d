@@ -5,10 +5,11 @@
 (require 'ue-company)
 (require 'ue-flycheck)
 (require 'ue-git)
-(require 'ue-paredit)
+(require 'ue-smartparens)
 (require 'ue-elisp)
 (require 'ue-python)
 (require 'ue-clojure)
+(require 'ue-yasnippet)
 
 (use-package zenburn-theme
   :ensure t

@@ -39,5 +39,8 @@
   ("C-;" . avy-goto-char)
   ("C-'" . avy-goto-word-1))
 
+(use-package ag
+  :ensure t)
+
 (defvar ue-enchant-enabled t)
 (provide 'ue-enchant)

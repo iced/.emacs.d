@@ -2,7 +2,9 @@
   :init
   (setq-default python-shell-interpreter "ipython")
   (setq-default python-shell-interpreter-args "--simple-prompt --no-banner --pprint")
-  (setq-default  python-shell-completion-native-enable nil))
+  (setq-default  python-shell-completion-native-enable nil)
+  (if (boundp 'ue-company-enabled)
+      (add-hook 'python-mode-hook #'smartparens-strict-mode)))
 
 (use-package anaconda-mode
   :ensure t
