@@ -42,5 +42,15 @@
 (use-package ag
   :ensure t)
 
+(use-package multiple-cursors
+  :ensure t
+  :init
+  (setq mc/list-file (expand-file-name "ml-lists.el" ue-var-dir))
+  :bind
+  ("C-c m m" . mc/edit-lines)
+  ("C-c m <" . mc/mark-previous-like-this)
+  ("C-c m >" . mc/mark-next-like-this)
+  ("C-c m a" . mc/mark-all-like-this-dwim))
+
 (defvar ue-enchant-enabled t)
 (provide 'ue-enchant)
