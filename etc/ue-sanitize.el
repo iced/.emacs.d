@@ -63,8 +63,10 @@
 
 (use-package dired
   :init
-  (setq dired-listing-switches "-Bhl --group-directories-first")
-  (setq directory-free-space-program nil))
+  (setq dired-listing-switches "-Bhl --group-directories-first"))
+
+(use-package dired+
+  :ensure t)
 
 (use-package exec-path-from-shell
   :if (ue-is-osx)

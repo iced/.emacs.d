@@ -4,9 +4,12 @@
 (require 'ue-projectile)
 (require 'ue-company)
 (require 'ue-flycheck)
+(require 'ue-eshell)
 (require 'ue-git)
 (require 'ue-smartparens)
+(require 'ue-org)
 (require 'ue-elisp)
+(require 'ue-clisp)
 (require 'ue-python)
 (require 'ue-clojure)
 (require 'ue-yasnippet)
@@ -27,8 +30,19 @@
         (add-to-list 'ido-ignore-files dir)
         (add-to-list 'ido-ignore-directories dir))))
 
+(setq inferior-lisp-program "sbcl")
+
 (if (and (boundp ue-elisp-enabled)
          (boundp ue-flycheck-enabled))
     (setq flycheck-checkers (delq 'emacs-lisp-checkdoc flycheck-checkers)))
+
+(setq org-agenda-files '("~/org/tasks.org"))
+(setq org-capture-templates
+      '(("n" "Note" entry (file "~/org/notes.org")
+         "* %?")
+        ("t" "Task" entry (file+headline "~/org/tasks.org" "Tasks")
+         "* TODO %?")))
+
+(set-face-attribute 'org-agenda-date-today nil :slant 'normal)
 
 (provide 'ue-profile-icedm)
