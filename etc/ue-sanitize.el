@@ -35,7 +35,7 @@
 (setq auto-save-default nil)
 (setq auto-save-list-file-prefix (expand-file-name "auto-save-" ue-var-dir))
 (setq-default indent-tabs-mode nil)
-(setq default-truncate-lines t)
+(setq-default truncate-lines t)
 (show-paren-mode t)
 (windmove-default-keybindings 'super)
 (fset 'yes-or-no-p 'y-or-n-p)

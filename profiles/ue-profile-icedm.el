@@ -12,6 +12,7 @@
 (require 'ue-clisp)
 (require 'ue-python)
 (require 'ue-clojure)
+(require 'ue-rust)
 (require 'ue-yasnippet)
 
 (use-package zenburn-theme

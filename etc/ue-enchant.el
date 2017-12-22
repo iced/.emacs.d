@@ -31,6 +31,9 @@
 (use-package yaml-mode
   :ensure t)
 
+(use-package toml-mode
+  :ensure t)
+
 (use-package avy
   :ensure t
   :init
@@ -58,6 +61,9 @@
   ("C-h k" . helpful-key)
   ("C-h v" . helpful-variable)
   ("C-h f" . helpful-function))
+
+(use-package markdown-mode
+  :ensure t)
 
 (defvar ue-enchant-enabled t)
 (provide 'ue-enchant)
