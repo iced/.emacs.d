@@ -46,4 +46,11 @@
 
 (set-face-attribute 'org-agenda-date-today nil :slant 'normal)
 
+(use-package osx-dictionary
+  :ensure t
+  :init
+  (setq osx-dictionary-mode-header-line nil)
+  :bind
+  ("C-=" . osx-dictionary-search-word-at-point))
+
 (provide 'ue-profile-icedm)

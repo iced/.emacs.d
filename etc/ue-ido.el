@@ -5,8 +5,7 @@
   (ido-mode t)
   (ido-everywhere t)
   (add-to-list 'ido-ignore-files "\\`\\.")
-  (add-to-list 'ido-ignore-directories "\\`\\.")
-  (add-to-list 'ido-ignore-buffers "^\*"))
+  (add-to-list 'ido-ignore-directories "\\`\\."))
 
 (use-package flx-ido
   :ensure t

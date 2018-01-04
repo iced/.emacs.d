@@ -35,10 +35,13 @@
   (setq pyenv-mode-mode-line-format
       '(:eval
         (when (and (pyenv-mode-version) (equal major-mode 'python-mode))
-          (concat "[" (pyenv-mode-version) "] "))))
+          (concat "py:" (pyenv-mode-version)))))
   :bind
   (:map pyenv-mode-map
         ("C-c C-e" . pyenv-mode-set)))
+
+(use-package pyenv-mode-auto
+  :ensure t)
 
 (defvar ue-python-enabled t)
 (provide 'ue-python)

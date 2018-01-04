@@ -4,7 +4,12 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (tooltip-mode 0)
-(menu-bar-mode 0)
+
+(add-hook 'after-make-frame-functions
+          (lambda (frame)
+            (set-frame-parameter frame 'menu-bar-lines
+                                 (if (display-graphic-p frame)
+                                     1 0))))
 
 (setq initial-major-mode 'fundamental-mode)
 (setq initial-scratch-message "")
