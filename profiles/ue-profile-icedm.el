@@ -53,4 +53,11 @@
   :bind
   ("C-=" . osx-dictionary-search-word-at-point))
 
+(use-package ledger-mode
+  :ensure t
+  :init
+  (require 'ob-ledger)
+  :bind
+  ("C-c C-v" . ledger-mode-clean-buffer))
+
 (provide 'ue-profile-icedm)

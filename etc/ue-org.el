@@ -4,6 +4,7 @@
   (setq org-M-RET-may-split-line nil)
   (setq org-display-custom-times t)
   (setq org-time-stamp-custom-formats '("<%F>" . "<%F %H:%M>"))
+  (setq org-confirm-babel-evaluate nil)
   (if (boundp 'ue-ido-enabled)
       (progn
         (setq org-completion-use-ido t)
