@@ -5,6 +5,8 @@
 (scroll-bar-mode 0)
 (tooltip-mode 0)
 
+(setq ring-bell-function (lambda () t))
+
 (add-hook 'after-make-frame-functions
           (lambda (frame)
             (set-frame-parameter frame 'menu-bar-lines
@@ -70,8 +72,7 @@
   :init
   (setq dired-listing-switches "-Bhl --group-directories-first"))
 
-(use-package dired+
-  :ensure t)
+(require 'dired+)
 
 (use-package exec-path-from-shell
   :if (ue-is-osx)
