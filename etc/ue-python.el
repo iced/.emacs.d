@@ -25,7 +25,6 @@
   :bind
   (:map anaconda-mode-map
         ("M-TAB" . company-complete)
-        ("M-," . anaconda-mode-go-back)
         ("M-*" . anaconda-mode-find-assignments)))
 
 (use-package pyenv-mode

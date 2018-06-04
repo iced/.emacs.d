@@ -70,7 +70,8 @@
 
 (use-package dired
   :init
-  (setq dired-listing-switches "-Bhl --group-directories-first"))
+  (setq dired-listing-switches "-Bhl --group-directories-first")
+  (put 'dired-find-alternate-file 'disabled nil))
 
 (require 'dired+)
 
