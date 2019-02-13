@@ -11,7 +11,9 @@
                 ""
               (format " [%s]" (projectile-project-name))))))
   :config
-  (projectile-global-mode))
+  (projectile-mode)
+  (bind-keys :map projectile-mode-map
+             ("C-c p" . projectile-command-map)))
 
 (defvar ue-projectile-enabled t)
 (provide 'ue-projectile)

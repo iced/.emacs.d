@@ -53,6 +53,8 @@
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "M-/") 'hippie-expand)
 (defalias 'list-buffers 'ibuffer)
+(setq split-width-threshold 200)
+(setq enable-remote-dir-locals t)
 
 (use-package delight
   :ensure t)

@@ -2,6 +2,7 @@
   :ensure t
   :init
   (setq cider-prompt-for-symbol nil)
+  (setq cider-repl-use-pretty-printing t)
   (if (boundp 'ue-smartparens-enabled)
       (progn
         (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
@@ -16,6 +17,7 @@
 (use-package clj-refactor
   :ensure t
   :init
+  (setq cljr-hotload-dependencies t)
   (add-hook 'clojure-mode-hook
             (lambda ()
               (clj-refactor-mode t)

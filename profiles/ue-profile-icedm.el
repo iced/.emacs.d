@@ -8,6 +8,7 @@
 (require 'ue-git)
 (require 'ue-smartparens)
 (require 'ue-org)
+(require 'ue-docker)
 (require 'ue-elisp)
 (require 'ue-python)
 (require 'ue-clojure)
@@ -18,7 +19,7 @@
   :config
   (ue-theme-set 'zenburn))
 
-(set-default-font "Source Code Pro")
+(set-frame-font "Source Code Pro")
 (set-face-attribute 'default nil :height 140)
 
 (setq insert-directory-program "gls")
